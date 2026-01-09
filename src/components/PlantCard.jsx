@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useCart } from '../Cartslice';
 import './PlantCard.css';
 
 const PlantCard = ({ plant }) => {
-  const { addToCart } = useCart();
+  const { addToCart, cartItems } = useCart();
   const [imageError, setImageError] = useState(false);
+
+  // Track if plant is added to cart using plant.name as key
+  const addedToCart = useMemo(() => {
+    const added = {};
+    const plantInCart = cartItems.find(cartItem => cartItem.plantId === plant.id);
+    if (plantInCart) {
+      added[plant.name] = true;
+    }
+    return added;
+  }, [cartItems, plant.id, plant.name]);
 
   const handleAddToCart = () => {
     addToCart(plant.id);
@@ -35,8 +45,12 @@ const PlantCard = ({ plant }) => {
         <p className="plant-card-description">{plant.description}</p>
         <div className="plant-card-footer">
           <span className="plant-card-price">${plant.price.toFixed(2)}</span>
-          <button className="plant-card-button" onClick={handleAddToCart}>
-            Add to Cart
+          <button 
+            className="plant-card-button" 
+            onClick={handleAddToCart}
+            disabled={addedToCart[plant.name]}
+          >
+            {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
           </button>
         </div>
       </div>

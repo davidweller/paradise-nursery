@@ -14,7 +14,7 @@ const Header = () => {
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/products" className="nav-link">Products</Link>
+          <Link to="/products" className="nav-link">Plants</Link>
           <Link to="/cart" className="nav-link cart-link">
             <span className="cart-icon">🛒</span>
             {totalItems > 0 && (

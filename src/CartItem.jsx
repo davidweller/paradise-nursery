@@ -2,7 +2,7 @@ import { useCart } from './Cartslice';
 import './CartItem.css';
 
 const CartItem = ({ item }) => {
-  const { updateQuantity, removeFromCart } = useCart();
+  const { updateQuantity, removeFromCart, getTotalCost } = useCart();
   const { plant, quantity } = item;
 
   const handleDecrease = () => {
@@ -17,7 +17,11 @@ const CartItem = ({ item }) => {
     removeFromCart(plant.id);
   };
 
+  // Calculate and display the total cost for each item in the cart based on its quantity
   const totalPrice = plant.price * quantity;
+  
+  // Get the total cart amount (sum of all items)
+  const totalCartAmount = getTotalCost();
 
   return (
     <div className="cart-item">
@@ -47,6 +51,7 @@ const CartItem = ({ item }) => {
           </button>
         </div>
         <div className="cart-item-total">
+          {/* Calculate and display the total cost for each item in the cart based on its quantity */}
           ${totalPrice.toFixed(2)}
         </div>
         <button 
@@ -56,6 +61,10 @@ const CartItem = ({ item }) => {
         >
           Delete
         </button>
+      </div>
+      {/* Code implementation displaying the total cart amount (sum of all items) */}
+      <div className="cart-total-amount-display">
+        Total Cart Amount: ${totalCartAmount.toFixed(2)}
       </div>
     </div>
   );
