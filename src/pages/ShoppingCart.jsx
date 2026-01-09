@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import CartItem from '../components/CartItem';
-import { useCart } from '../context/CartContext';
+import CartItem from '../CartItem';
+import { useCart } from '../Cartslice';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
