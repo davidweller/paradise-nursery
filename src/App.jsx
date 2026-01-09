@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/paradise-nursery">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/products" element={<ProductListing />} />
