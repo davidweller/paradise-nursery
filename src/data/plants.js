@@ -13,7 +13,7 @@ export const plants = [
     name: "Rosemary",
     description: "Aromatic herb with needle-like leaves. Great for cooking and natural air freshening.",
     price: 9.99,
-    image: "https://images.unsplash.com/photo-1576045057992-2c5a1f3b5e5f?w=400&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1615485925511-ef4f6b8c8c0a?w=400&h=400&fit=crop&auto=format",
     category: "Aromatic Plants"
   },
   {
