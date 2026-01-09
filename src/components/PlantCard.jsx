@@ -1,17 +1,34 @@
+import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import './PlantCard.css';
 
 const PlantCard = ({ plant }) => {
   const { addToCart } = useCart();
+  const [imageError, setImageError] = useState(false);
 
   const handleAddToCart = () => {
     addToCart(plant.id);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <div className="plant-card">
       <div className="plant-card-image">
-        <img src={plant.image} alt={plant.name} />
+        {imageError ? (
+          <div className="plant-card-placeholder">
+            <span>{plant.name}</span>
+          </div>
+        ) : (
+          <img 
+            src={plant.image} 
+            alt={plant.name}
+            onError={handleImageError}
+            loading="lazy"
+          />
+        )}
       </div>
       <div className="plant-card-content">
         <h3 className="plant-card-name">{plant.name}</h3>
