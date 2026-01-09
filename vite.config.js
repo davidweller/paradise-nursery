@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-// Using HashRouter, so base can be relative
+// Base path for GitHub Pages deployment
 export default defineConfig({
   plugins: [react()],
-  base: './'
+  base: '/paradise-nursery/'
 })
 
