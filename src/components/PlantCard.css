@@ -1,0 +1,116 @@
+.plant-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plant-card-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.plant-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.plant-card:hover .plant-card-image img {
+  transform: scale(1.05);
+}
+
+.plant-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.plant-card-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d5016;
+  margin-bottom: 0.5rem;
+}
+
+.plant-card-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.plant-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.plant-card-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a7c2a;
+}
+
+.plant-card-button {
+  background-color: #4a7c2a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.plant-card-button:hover {
+  background-color: #5a9c3a;
+  transform: scale(1.05);
+}
+
+.plant-card-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .plant-card-image {
+    height: 200px;
+  }
+
+  .plant-card-content {
+    padding: 1rem;
+  }
+
+  .plant-card-name {
+    font-size: 1.2rem;
+  }
+
+  .plant-card-description {
+    font-size: 0.9rem;
+  }
+
+  .plant-card-price {
+    font-size: 1.2rem;
+  }
+
+  .plant-card-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
