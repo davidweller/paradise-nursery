@@ -44,45 +44,6 @@ NurseryApp/
 └── README.md
 ```
 
-## Features in Detail
-
-### Landing Page
-- Full-screen hero section with background image
-- Company name and description
-- "Get Started" button linking to products
-
-### Product Listing Page
-- Header with navigation and cart icon
-- Plants organized by categories
-- Each plant card shows:
-  - Thumbnail image
-  - Plant name
-  - Description
-  - Price
-  - "Add to Cart" button
-
-### Shopping Cart Page
-- Header with navigation and cart icon
-- List of cart items with:
-  - Thumbnail image
-  - Plant name
-  - Unit price
-  - Quantity controls (increase/decrease)
-  - Total price for that item
-  - Delete button
-- Cart summary showing:
-  - Total number of items
-  - Total cost
-- "Continue Shopping" and "Checkout" buttons
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## License
 
 This project is open source and available under the MIT License.
